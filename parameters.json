@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "apiVersion": {
+            "value": "2019-07-01"
+        },
+        "name": {
+            "value": "HomeAssistant"
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "osAccountType": {
+            "value": "StandardSSD_LRS"
+        },
+        "osType": {
+            "value": "Linux"
+        },
+        "osDiskBlobUri": {
+            "value": "https://hassio.blob.core.windows.net/image/Hassos.vhd"
+        },
+        "osDiskCaching": {
+            "value": "ReadWrite"
+        },
+        "zoneResilient": {
+            "value": false
+        },
+        "hyperVGeneration": {
+            "value": "V1"
+        }
+    }
+}

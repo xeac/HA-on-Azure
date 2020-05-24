@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "apiVersion": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "osType": {
+            "type": "string"
+        },
+        "osDiskBlobUri": {
+            "type": "string"
+        },
+        "osDiskCaching": {
+            "type": "string"
+        },
+        "osAccountType": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "zoneResilient": {
+            "type": "bool"
+        },
+        "hyperVGeneration": {
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "[parameters('apiVersion')]",
+            "type": "Microsoft.Compute/images",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "storageProfile": {
+                    "osDisk": {
+                        "osType": "[parameters('osType')]",
+                        "blobUri": "[parameters('osDiskBlobUri')]",
+                        "caching": "[parameters('osDiskCaching')]",
+                        "storageAccountType": "[parameters('osAccountType')]"
+                    },
+                    "dataDisks": [],
+                    "zoneResilient": "[parameters('zoneResilient')]"
+                },
+                "hyperVGeneration": "[parameters('hyperVGeneration')]"
+            }
+        }
+    ]
+}
