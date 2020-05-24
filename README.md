@@ -14,7 +14,8 @@ Steps to prepare HA virtual appliance running on a VM in Azure
     Create a Storage account e.g. GP v.2 
     Once ready, go to Blob  services and create a container
     Upload the vhd image into the container blob page blob
-4. Go to images and restore from the uploaded image.
+4. Go to images and create an image from the uploaded vhd
+5. Once the image is ready, you ca now create your VM
 
-# Json templates are in the Repository
+# Json templates for storage account, image and VM are in the Repository
     
